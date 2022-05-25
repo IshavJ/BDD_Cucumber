@@ -10,6 +10,7 @@ public class Page_Enter
     WebDriver driver;
     By EBook =By.xpath("//(a[@title='FREE eBooks'])[2]");
 
+    //constructor disabled.
  /*   public Page_Enter(WebDriver driver)
     {
         this.driver=driver;
