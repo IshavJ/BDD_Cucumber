@@ -14,8 +14,8 @@ import static drivers.Driver.driver;
 public class AuthenticationPage {
     public static void continueButton() throws IOException {
         PropertiesFetch.prop();
-        WebDriverWait w = new WebDriverWait(driver, Duration.ofMillis(4000));
-        WebElement item = w.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(PropertiesFetch.continueButton)));
+        WebDriverWait w = new WebDriverWait(driver, Duration.ofMillis(10000));
+        WebElement item = w.until(ExpectedConditions.presenceOfElementLocated(By.tagName(PropertiesFetch.continueButton)));
         Assert.assertTrue(item.isDisplayed(),"Button not visible");
     }
 }

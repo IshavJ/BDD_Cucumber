@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.Properties;
 
 public class PropertiesFetch {
-    public static String url,popup,searchbar,searchButton,itemDesc,addtoCart,PlaceOrder,totalCash,continueButton;
+    public static String url,popup,searchbar,searchButton,itemDesc,addtoCart,PlaceOrder,totalCash,continueButton,sendingKeys;
     public static void prop() throws IOException {
         FileInputStream file = new FileInputStream("src/test/resources/ObjectRepo.properties");
         Properties proP = new Properties();
@@ -20,5 +20,6 @@ public class PropertiesFetch {
         PlaceOrder = proP.getProperty("placeOrder");
         totalCash = proP.getProperty("totalCash");
         continueButton = proP.getProperty("continueButton");
+        sendingKeys = proP.getProperty("sendtxt");
     }
 }

@@ -15,7 +15,7 @@ public class PlaceOrderPage {
     static WebDriverWait w;
     public static void placeOrder() throws IOException {
         PropertiesFetch.prop();
-        w = new WebDriverWait(driver, Duration.ofMillis(4000));
+        w = new WebDriverWait(driver, Duration.ofMillis(10000));
         WebElement item = w.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector(PropertiesFetch.PlaceOrder)));
         Assert.assertTrue(item.isDisplayed(),"Button Not Displayed");
         item.click();
@@ -23,8 +23,8 @@ public class PlaceOrderPage {
 
     public static void totalAmount() throws IOException {
         PropertiesFetch.prop();
-        w = new WebDriverWait(driver, Duration.ofMillis(3000));
-        WebElement item = w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PropertiesFetch.totalCash)));
+        w = new WebDriverWait(driver, Duration.ofMillis(10000));
+        WebElement item = w.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(PropertiesFetch.totalCash)));
         Assert.assertTrue(item.isDisplayed(),"Total cash Not Visible");
     }
 }

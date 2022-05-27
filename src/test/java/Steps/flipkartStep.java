@@ -2,11 +2,15 @@ package Steps;
 
 import Pages.*;
 import drivers.Driver;
+import drivers.PropertiesFetch;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.testng.Assert;
+
 import java.io.IOException;
 import java.util.Iterator;
+import java.util.Properties;
 import java.util.Set;
 
 import static drivers.Driver.driver;
@@ -25,7 +29,7 @@ public class flipkartStep {
         HomePage.popupClear();
 
         //Text to the search bar
-        HomePage.SearchBarTxt("HP Ryzen 3 Dual Core 3250U");
+        HomePage.SearchBarTxt(PropertiesFetch.sendingKeys);
     }
 
     @When("click on search button")
