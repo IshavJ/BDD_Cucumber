@@ -26,8 +26,6 @@ public class ExcelDriver {
             int col_Num = -1;
             sheet = workbook.getSheet(sheetName);
             row = sheet.getRow(0);
-            int r = sheet.getPhysicalNumberOfRows();
-            System.out.println(r);
             for (int i = 0; i < row.getLastCellNum(); i++) {
                 if (row.getCell(i).getStringCellValue().trim().equals(colName.trim()))
                     col_Num = i;
@@ -44,11 +42,6 @@ public class ExcelDriver {
             e.printStackTrace();
             return "row " + rowNum + " does not exist  in Excel";
         }
-    }
-
-    public static void main(String args[]) throws Exception {
-        ExcelDriver e = new ExcelDriver();
-        System.out.println(e.getCellData("Sheet1","Data",2));
     }
 }
 
