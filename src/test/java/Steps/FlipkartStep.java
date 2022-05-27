@@ -27,17 +27,17 @@ public class FlipkartStep {
         HomePage.popupClear();
 
         //Text to the search bar
-        HomePage.SearchBarTxt(PropertiesFetch.sendingKeys);
+        HomePage.searchBarTxt(PropertiesFetch.sendingKeys);
     }
 
     @When("click on search button")
     public void click_on_search_button() throws IOException {
-        HomePage.SearchButtonClick();
+        HomePage.searchButtonClick();
     }
 
     @When("click on item")
     public void click_on_item() throws IOException {
-        ResultPage.ItemDescription();
+        ResultPage.itemDescription();
     }
 
     @Then("click on add to cart and perform verifications")

@@ -27,17 +27,17 @@ public class ScenarioExcel {
 
         data = testData.get(i).get("Data");
 
-        HomePage.SearchBarTxt(data);
+        HomePage.searchBarTxt(data);
     }
 
     @When("click on button")
     public void click_on_button() throws IOException {
-        HomePage.SearchButtonClick();
+        HomePage.searchButtonClick();
     }
 
     @Then("verify title")
     public void verify_title() {
-        String title = ResultPage.CheckHead("//span[text()='"+ data+"']");
+        String title = ResultPage.checkHead("//span[text()='"+ data+"']");
         Assert.assertEquals(title,data,"Span are not Equal");
 
         Driver.close();

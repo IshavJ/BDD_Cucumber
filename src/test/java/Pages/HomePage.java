@@ -21,14 +21,14 @@ public class HomePage {
         driver.findElement(By.cssSelector(PropertiesFetch.popup)).click();
     }
 
-    public static void SearchBarTxt(String s) throws IOException {
+    public static void searchBarTxt(String s) throws IOException {
         PropertiesFetch.prop();
         WebElement item = driver.findElement(By.xpath(PropertiesFetch.searchbar));
         Assert.assertTrue(item.isDisplayed(), "Not Visible");
         item.sendKeys(s);
     }
 
-    public static void SearchButtonClick() throws IOException {
+    public static void searchButtonClick() throws IOException {
         PropertiesFetch.prop();
         driver.findElement(By.tagName(PropertiesFetch.searchButton)).click();
     }

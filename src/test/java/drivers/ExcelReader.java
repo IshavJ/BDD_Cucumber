@@ -24,21 +24,21 @@ public class ExcelReader {
 		return readSheet(sheet);
 	}
 
-	public List<Map<String, String>> getData(String excelFilePath, int sheetNumber)
-			throws InvalidFormatException, IOException {
-		Sheet sheet = getSheetByIndex(excelFilePath, sheetNumber);
-		return readSheet(sheet);
-	}
+//	public List<Map<String, String>> getData(String excelFilePath, int sheetNumber)
+//			throws InvalidFormatException, IOException {
+//		Sheet sheet = getSheetByIndex(excelFilePath, sheetNumber);
+//		return readSheet(sheet);
+//	}
 
 	private Sheet getSheetByName(String excelFilePath, String sheetName) throws IOException, InvalidFormatException {
 		Sheet sheet = getWorkBook(excelFilePath).getSheet(sheetName);
 		return sheet;
 	}
 
-	private Sheet getSheetByIndex(String excelFilePath, int sheetNumber) throws IOException, InvalidFormatException {
-		Sheet sheet = getWorkBook(excelFilePath).getSheetAt(sheetNumber);
-		return sheet;
-	}
+//	private Sheet getSheetByIndex(String excelFilePath, int sheetNumber) throws IOException, InvalidFormatException {
+//		Sheet sheet = getWorkBook(excelFilePath).getSheetAt(sheetNumber);
+//		return sheet;
+//	}
 
 	private Workbook getWorkBook(String excelFilePath) throws IOException, InvalidFormatException {
 		return WorkbookFactory.create(new File(excelFilePath));
@@ -76,10 +76,8 @@ public class ExcelReader {
 					cell = row.getCell(currentColumn, Row.MissingCellPolicy.CREATE_NULL_AS_BLANK);
 					if (cell.getCellType() == CellType.STRING) {
 						return row.getRowNum();
-
 					} else if (cell.getCellType() == CellType.NUMERIC) {
 						return row.getRowNum();
-
 					} else if (cell.getCellType() == CellType.BOOLEAN) {
 						return row.getRowNum();
 					} else if (cell.getCellType() == CellType.ERROR) {
