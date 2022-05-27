@@ -17,8 +17,8 @@ public class HomePage {
     public static void popupClear() throws IOException {
         PropertiesFetch.prop();
         WebDriverWait w= new WebDriverWait(driver, Duration.ofMillis(10000));
-        WebElement j = w.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector(PropertiesFetch.popup)));
-        j.click();
+        w.until(ExpectedConditions.refreshed(ExpectedConditions.stalenessOf(driver.findElement(By.cssSelector(PropertiesFetch.popup)))));
+        driver.findElement(By.cssSelector(PropertiesFetch.popup)).click();
     }
 
     public static void SearchBarTxt(String s) throws IOException {

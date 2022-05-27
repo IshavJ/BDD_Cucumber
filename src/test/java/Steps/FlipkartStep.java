@@ -6,16 +6,14 @@ import drivers.PropertiesFetch;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.testng.Assert;
 
 import java.io.IOException;
 import java.util.Iterator;
-import java.util.Properties;
 import java.util.Set;
 
 import static drivers.Driver.driver;
 
-public class flipkartStep {
+public class FlipkartStep {
 
     @Given("user browse to the site")
     public void user_browse_to_the_site() throws IOException {
