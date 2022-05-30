@@ -9,6 +9,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.asserts.SoftAssert;
 
 import java.util.Iterator;
@@ -83,12 +84,22 @@ public class DummyHTml {
         driver.findElement(By.xpath("//input[@name='gender']/following-sibling::input")).click();//for female
         driver.findElement(By.xpath("//input[@type='radio'][@id='Male']")).click();
     }
+    @When("select dropdown")
+    public void select_dropdown() {
+    WebElement element= driver.findElement(By.id("myDropDown"));
+            element.click();
+        Select select=new Select(element);
+        //select.selectByValue("2");
+        //select.selectByIndex(3);
+        select.selectByVisibleText("4");
+    }
 
     @Then("Click on Submit")
     public void click_on_submit() {
         driver.manage().timeouts().implicitlyWait(3000, TimeUnit.MILLISECONDS);
         driver.findElement(By.id("submit")).click();
     }
+
 
     @When("Click on link")
     public void click_on_link()

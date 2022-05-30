@@ -7,4 +7,5 @@ Feature: Click on Buttons and fetch data
     And enter first name and last name
     And Select gender
     And Click on link
+    And select dropdown
     Then Click on Submit

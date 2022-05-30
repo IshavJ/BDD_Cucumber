@@ -22,7 +22,10 @@ public class XpathPractice
          //driver.findElement(By.xpath("//div[@id='nav-xshop']//descendant::a[text()='Best Sellers']")).click();
          //driver.findElement(By.xpath("//a[@class='nav-a  ']//following-sibling::a[text()='Mobiles']")).click();
         // driver.findElement(By.xpath("//a[@class='nav-a  ']//preceding::a[text()='Customer Service']")).click();
-         driver.findElement(By.xpath("//a[@class='nav-a  ']/following::a[text()='Customer Service']")).click();
+         //driver.findElement(By.xpath("//a[@class='nav-a  ']/following::a[text()='Customer Service']")).click();
+         driver.findElement(By.xpath("//a[@class='nav-a  ']//following::a[text()='Mobiles']")).click();
+         //a[@class='nav-a  ']//following::a[text()='Amazon Pay']
+
 
 
     }
