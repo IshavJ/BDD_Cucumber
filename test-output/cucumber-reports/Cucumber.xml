@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="47.781">
+<testcase classname="verify flipkart app" name="Verify add to cart functionality" time="47.469">
+<system-out><![CDATA[Given user enters the flipkart app..........................................passed
+When enter item.............................................................passed
+And verify text in search bar...............................................passed
+And verify if item exist....................................................passed
+And select desired item.....................................................passed
+And verify if add to cart button is displayed...............................passed
+And click on add to cart button.............................................passed
+And verify if apply button exist............................................passed
+And click on place order....................................................passed
+Then verify if login field is displayed.....................................passed
+]]></system-out>
+</testcase>
+</testsuite>

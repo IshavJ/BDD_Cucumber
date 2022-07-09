@@ -1,8 +1,8 @@
 package Steps;
 
-import Pages.*;
-import drivers.Driver;
-import drivers.PropertiesFetch;
+import Pages.FlipkartWeb.*;
+import Drivers.Driver;
+import Drivers.PropertiesFetch;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -11,14 +11,14 @@ import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
-import static drivers.Driver.driver;
+import static Drivers.Driver.driver;
 
 public class FlipkartStep {
 
     @Given("user browse to the site")
     public void user_browse_to_the_site() throws IOException {
         //browser
-        Driver.web_Setup();
+        //Driver.web_Setup();
     }
 
     @When("user enter text inside search bar")
@@ -69,7 +69,6 @@ public class FlipkartStep {
 
                 Driver.close();
                 driver.switchTo().window(parent);
-                Driver.close();
             }
         }
     }

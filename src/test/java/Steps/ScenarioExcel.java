@@ -1,9 +1,9 @@
 package Steps;
 
-import Pages.HomePage;
-import Pages.ResultPage;
-import drivers.Driver;
-import drivers.ExcelReader;
+import Pages.FlipkartWeb.HomePage;
+import Pages.FlipkartWeb.ResultPage;
+import Drivers.Driver;
+import Drivers.ExcelReader;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
