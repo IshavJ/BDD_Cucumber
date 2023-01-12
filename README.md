@@ -1,4 +1,1 @@
-# BDD_Cucumber
-Files for BDD-Cucumber
-
-Flipkart
+Practice of automation on **macOS** [Big Sur] on _mac Mini_
