@@ -5,7 +5,7 @@ import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(features = "src/test/resources/FlipkartApp.feature"
+@CucumberOptions(features = "src/test/resources/FlipkartIOS.feature"
         ,glue={"Steps","Drivers"},
         plugin = {"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"},
 //        tags = "@App",

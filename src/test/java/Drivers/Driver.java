@@ -7,7 +7,9 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileElement;
+import io.appium.java_client.ios.IOSDriver;
 import io.appium.java_client.remote.AndroidMobileCapabilityType;
+import io.appium.java_client.remote.IOSMobileCapabilityType;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.commons.io.FileUtils;
@@ -53,6 +55,29 @@ public class Driver {
         desiredCap.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY,"com.flipkart.android.activity.HomeFragmentHolderActivity");
 
         Driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCap);
+    }
+
+    public static void invokeIOS(){
+        try{
+            desiredCap = new DesiredCapabilities();
+            desiredCap.setCapability(MobileCapabilityType.DEVICE_NAME,"iPhone 7 Plus");
+            desiredCap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ios");
+            desiredCap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
+            desiredCap.setCapability(IOSMobileCapabilityType.BUNDLE_ID,"com.appflipkart.flipkart");
+            desiredCap.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID,"D6JRRZ52MB");
+            desiredCap.setCapability(IOSMobileCapabilityType.WDA_CONNECTION_TIMEOUT,"600000");
+            desiredCap.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID,"iPhone Developer");
+            desiredCap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"15.7.2");
+            desiredCap.setCapability(MobileCapabilityType.UDID,"26dd89d1c8618c0f5df95cf1ef36d1214b77ffc4");
+            desiredCap.setCapability(MobileCapabilityType.NO_RESET,"True");
+
+            Driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCap);
+            wait = new WebDriverWait(Driver,20);
+            //Relaunch
+            Driver.launchApp();
+        }catch (Exception e){
+            System.out.println("Connection not established :( ....");
+        }
     }
 
     public static void terminate(){
