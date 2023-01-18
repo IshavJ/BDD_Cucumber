@@ -57,19 +57,20 @@ public class Driver {
         Driver = new AppiumDriver<>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCap);
     }
 
-    public static void invokeIOS(){
+    public static void invokeIOS(String bundleId){
         try{
             desiredCap = new DesiredCapabilities();
             desiredCap.setCapability(MobileCapabilityType.DEVICE_NAME,"iPhone 7 Plus");
             desiredCap.setCapability(MobileCapabilityType.PLATFORM_NAME,"ios");
             desiredCap.setCapability(MobileCapabilityType.AUTOMATION_NAME,"XCUITest");
-            desiredCap.setCapability(IOSMobileCapabilityType.BUNDLE_ID,"com.appflipkart.flipkart");
+            desiredCap.setCapability(IOSMobileCapabilityType.BUNDLE_ID,bundleId);
             desiredCap.setCapability(IOSMobileCapabilityType.XCODE_ORG_ID,"D6JRRZ52MB");
             desiredCap.setCapability(IOSMobileCapabilityType.WDA_CONNECTION_TIMEOUT,"600000");
             desiredCap.setCapability(IOSMobileCapabilityType.XCODE_SIGNING_ID,"iPhone Developer");
             desiredCap.setCapability(MobileCapabilityType.PLATFORM_VERSION,"15.7.2");
             desiredCap.setCapability(MobileCapabilityType.UDID,"26dd89d1c8618c0f5df95cf1ef36d1214b77ffc4");
-            desiredCap.setCapability(MobileCapabilityType.NO_RESET,"True");
+            //desiredCap.setCapability(MobileCapabilityType.NO_RESET,"True"); //State of application is not restarted.
+            //First activity is not restarted.
 
             Driver = new IOSDriver<MobileElement>(new URL("http://127.0.0.1:4723/wd/hub"), desiredCap);
             wait = new WebDriverWait(Driver,20);
