@@ -60,5 +60,7 @@ public class FlipkartIOSSteps {
     @Then("Verify user lands item screen")
     public void verifyUserLandsItemScreen() {
         ItemScreenModule.verifyItemScreen();
+        DetailsModule.tapsOnDetailsButton();
+        DetailsModule.verifyDetailsScreen();
     }
 }
